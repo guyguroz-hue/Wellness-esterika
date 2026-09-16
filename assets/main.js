@@ -1,45 +1,41 @@
+const WA_NUMBER = '972545367306';
+
 // Reveal on scroll
 const io = new IntersectionObserver((entries) => {
-  entries.forEach((e, i) => {
-    if (e.isIntersecting) {
-      setTimeout(() => e.target.classList.add('is-in'), (i % 4) * 90);
-      io.unobserve(e.target);
-    }
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
   });
-}, { threshold: 0.12, rootMargin: '0px 0px -60px' });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px' });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-// Sticky nav
-const nav = document.getElementById('nav');
-const onScroll = () => nav.classList.toggle('is-stuck', window.scrollY > 80);
-onScroll();
-window.addEventListener('scroll', onScroll, { passive: true });
-
-// Hero parallax
-const bg = document.querySelector('.hero__bg');
-if (bg && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  window.addEventListener('scroll', () => {
-    const y = Math.min(window.scrollY, window.innerHeight);
-    bg.style.transform = `translateY(${y * 0.18}px) scale(1.04)`;
-  }, { passive: true });
-}
-
-// Form → WhatsApp
-const form = document.getElementById('form');
+// Signup form → WhatsApp
+const form = document.getElementById('signup');
 const msg = document.getElementById('msg');
 form?.addEventListener('submit', (e) => {
   e.preventDefault();
   const d = new FormData(form);
-  const name = (d.get('name') || '').toString().trim();
-  const phone = (d.get('phone') || '').toString().trim();
-  if (!name || !phone) {
-    form.querySelectorAll('input[required]').forEach(i => {
-      if (!i.value.trim()) i.style.borderColor = '#E2A183';
-    });
-    return;
-  }
-  const text = `היי אסתריקה! אשמח להירשם לבוקר הוולנסי.\nשם: ${name}\nטלפון: ${phone}\nהערות: ${d.get('notes') || '-'}`;
-  window.open('https://wa.me/972500000000?text=' + encodeURIComponent(text), '_blank');
+  const val = k => (d.get(k) || '').toString().trim();
+  let ok = true;
+  form.querySelectorAll('input[required]').forEach(i => {
+    const bad = !i.value.trim();
+    i.classList.toggle('is-err', bad);
+    if (bad) ok = false;
+  });
+  if (!ok) return;
+
+  const lines = [
+    'היי אסתריקה! אשמח להירשם לבוקר הוולנסי 🌿',
+    `שם: ${val('name')}`,
+    `טלפון: ${val('phone')}`,
+    val('email') && `אימייל: ${val('email')}`,
+    `מגיעים: ${val('count')}`,
+    val('notes') && `הערות: ${val('notes')}`
+  ].filter(Boolean);
+
+  window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(lines.join('\n'))}`, '_blank');
   msg.hidden = false;
   form.reset();
 });
+
+form?.querySelectorAll('input').forEach(i =>
+  i.addEventListener('input', () => i.classList.remove('is-err')));
