@@ -186,3 +186,25 @@ details p{margin:.7em 0 0;color:var(--ink-soft);font-size:.97rem}
   body{font-size:16px}
   .choice__grid{grid-template-columns:1fr}
 }
+
+/* Instagram card */
+.card--ig{text-align:center}
+.ig__ico{
+  width:56px;height:56px;display:grid;place-items:center;margin:0 auto 14px;
+  border-radius:18px;color:#fff;
+  background:linear-gradient(45deg,#F9A03F 0%,#E1306C 45%,#A233B8 100%);
+}
+.ig__ico svg{width:32px;height:32px}
+.btn--ig{
+  background:linear-gradient(45deg,#F9A03F 0%,#E1306C 45%,#A233B8 100%);
+  color:#fff;box-shadow:0 12px 26px -16px rgba(225,48,108,.9);
+}
+.btn--ig:hover{transform:translateY(-2px)}
+
+/* Form states */
+.form__msg--err{color:#B4553A}
+.done{text-align:center;padding:14px 4px}
+.done__ico{font-size:2.4rem;display:block;margin-bottom:.3em}
+.done h3{font-size:1.4rem;font-weight:800;margin:0 0 .4em}
+.done p{color:var(--ink-soft);margin:0}
+button[disabled]{opacity:.6;cursor:progress}
