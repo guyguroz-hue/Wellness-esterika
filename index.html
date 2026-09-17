@@ -28,19 +28,26 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero__media">
-    <img src="assets/images/estrika-cart.jpg" alt="עגלת הקפה אסתריקה בשעת שקיעה" fetchpriority="high">
-  </div>
-  <div class="hero__inner">
-    <p class="kicker kicker--light reveal">בוקר אחד · שלוש תחנות · על הירקון</p>
-    <h1 class="reveal">הבוקר<br>הוולנסי</h1>
-    <p class="hero__lead reveal">בוקר אחד שמחבר תנועה, נשימה וטבילה מודרכת במי קרח —
-      ומסתיים אצלנו בעגלה, עם כריך טרי וקפה.</p>
-    <ul class="hero__rail reveal">
-      <li><b>07:00</b><span>התכנסות</span></li>
-      <li><b>4</b><span>שעות</span></li>
-      <li><b>250<i>₪</i></b><span>הרשמה מוקדמת</span></li>
-    </ul>
+  <div class="hero__grid">
+    <figure class="hero__media reveal">
+      <img src="assets/images/hero-yard.jpg"
+           alt="שיעור יוגה בחצר של אסתריקה, מול העגלה ואמבטיית הקרח" fetchpriority="high">
+    </figure>
+    <div class="hero__inner">
+      <p class="kicker kicker--light reveal">בוקר אחד · שלוש תחנות · על הירקון</p>
+      <h1 class="reveal">הבוקר<br>הוולנסי</h1>
+      <p class="hero__lead reveal">בוקר אחד שמחבר תנועה, נשימה וטבילה מודרכת במי קרח —
+        ומסתיים אצלנו בעגלה, עם כריך טרי וקפה.</p>
+      <ul class="hero__rail reveal">
+        <li><b>09:00</b><span>התכנסות</span></li>
+        <li><b>13:00</b><span>סיום</span></li>
+      </ul>
+      <a class="hero__price reveal" href="#price">
+        <span class="hero__price-lbl">הרשמה מוקדמת</span>
+        <b>250<i>₪</i></b>
+        <span class="hero__price-was">במקום 275 ₪</span>
+      </a>
+    </div>
   </div>
   <div class="hero__marquee" aria-hidden="true">
     <span>יוגה · נשימות · אמבטיית קרח · קפה וארוחת בוקר · יוגה · נשימות · אמבטיית קרח · קפה וארוחת בוקר ·&nbsp;</span>
@@ -55,7 +62,7 @@
     <dl class="specs">
       <div class="spec reveal">
         <dt>תאריך ושעה</dt>
-        <dd><b>בקרוב</b> — יום שבת, התכנסות 07:00 וסיום סביב 11:00.
+        <dd><b>בקרוב</b> — יום שבת, 09:00–13:00.
           התאריך המדויק יתפרסם כאן ובאינסטגרם שלנו.</dd>
       </div>
       <div class="spec reveal">
@@ -84,7 +91,10 @@
 
   <article class="act reveal">
     <div class="act__media">
-      <img src="assets/images/yoga-1.png" alt="שיעור יוגה קבוצתי" loading="lazy">
+      <video class="act__video" src="assets/images/yoga-clip.mp4"
+             poster="assets/images/yoga-clip-poster.jpg"
+             autoplay muted loop playsinline preload="metadata"
+             aria-label="קטע מתוך שיעור יוגה"></video>
       <span class="act__num">01</span>
     </div>
     <div class="act__text">
@@ -151,23 +161,24 @@
 </section>
 
 <!-- TICKET -->
-<section class="band band--bone" id="price">
+<section class="band band--price" id="price">
   <div class="wrap">
-    <div class="ticket reveal">
-      <p class="kicker">מחיר השתתפות</p>
-      <div class="ticket__rows">
-        <div class="ticket__row is-lead">
-          <span>הרשמה מוקדמת</span>
-          <b>250<i>₪</i></b>
-        </div>
-        <div class="ticket__row">
-          <span>לאחר מכן</span>
-          <b>275<i>₪</i></b>
-        </div>
+    <div class="deal reveal">
+      <span class="deal__tag">הרשמה מוקדמת</span>
+      <div class="deal__figure">
+        <b>250<i>₪</i></b>
+        <s>275 ₪</s>
       </div>
-      <p class="ticket__incl">כולל שיעור יוגה, סדנת נשימות וטבילה באמבטיית קרח בליווי צמוד —
-        ובסיום כריך, קפה ופינוקים נוספים בעגלה</p>
-      <p class="ticket__fine">* ההרשמה לא מהווה תשלום מיידי, התשלום ייגבה בהודעה פרטית</p>
+      <p class="deal__sub">לאדם · בוקר שלם של ארבע שעות</p>
+      <ul class="deal__list">
+        <li>שיעור יוגה בהנחיה אישית</li>
+        <li>סדנת נשימות והתחברות לנפש</li>
+        <li>טבילה באמבטיית קרח בליווי צמוד</li>
+        <li>כריך, קפה ופינוקים נוספים בעגלה</li>
+        <li>מזרנים וכל הציוד מחכים במקום</li>
+      </ul>
+      <a class="deal__cta" href="#form">שמרו לי מקום</a>
+      <p class="deal__fine">* ההרשמה לא מהווה תשלום מיידי, התשלום ייגבה בהודעה פרטית</p>
     </div>
   </div>
 </section>
@@ -253,7 +264,7 @@
 
 <!-- DOCK -->
 <nav class="dock" aria-label="פעולות מהירות">
-  <a class="dock__cta" href="#form">שמרו לי מקום</a>
+  <a class="dock__cta" href="#form">שמרו לי מקום <em>250₪</em></a>
   <a class="dock__ico" href="https://wa.me/972545367306?text=%D7%94%D7%99%D7%99%20%D7%90%D7%A1%D7%AA%D7%A8%D7%99%D7%A7%D7%94%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%94%D7%91%D7%95%D7%A7%D7%A8%20%D7%94%D7%95%D7%95%D7%9C%D7%A0%D7%A1%D7%99" target="_blank" rel="noopener" aria-label="וואטסאפ">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round">
       <path d="M3.2 20.8 4.6 16A8.6 8.6 0 1 1 8 19.4z"/>
