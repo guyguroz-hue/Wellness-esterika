@@ -101,7 +101,7 @@ b,strong{font-weight:700}
 .hero__price:hover{background:#8E3D22;transform:translateY(-2px)}
 .hero__price-lbl{font-size:.7rem;letter-spacing:.24em;font-weight:700;opacity:.9}
 .hero__price b{font-family:var(--display);font-weight:400;font-size:2.1rem;line-height:1}
-.hero__price i{font-style:normal;font-size:1.1rem}
+.hero__price i{font-style:normal;font-family:var(--sans);font-weight:600;font-size:1.05rem;margin-inline-end:.12em}
 .hero__price-was{font-size:.8rem;opacity:.75;text-decoration:line-through}
 
 /* Marquee */
@@ -204,7 +204,10 @@ b,strong{font-weight:700}
   font-family:var(--display);font-weight:400;line-height:.9;
   font-size:clamp(5rem,20vw,8.5rem);color:var(--paper);
 }
-.deal__figure i{font-style:normal;font-size:.42em;color:var(--clay-lt)}
+.deal__figure i{
+  font-style:normal;font-family:var(--sans);font-weight:600;font-size:.3em;
+  color:var(--clay-lt);margin-inline-end:.15em;
+}
 .deal__figure s{font-size:1.05rem;color:rgba(237,230,218,.5)}
 .deal__sub{font-size:.8rem;letter-spacing:.2em;color:var(--clay-lt);margin:.6em 0 2.2em}
 .deal__list{
@@ -319,9 +322,11 @@ button[disabled]{opacity:.5;cursor:progress}
   padding:1.25em 1em;transition:background .3s;
 }
 .dock__cta em{
-  font-style:normal;font-family:var(--display);font-size:1.15rem;letter-spacing:0;
-  background:var(--paper);color:var(--clay);padding:.1em .5em;line-height:1.25;
+  font-style:normal;font-family:var(--sans);font-weight:700;font-size:1.02rem;
+  letter-spacing:0;background:var(--paper);color:var(--clay);
+  padding:.18em .6em;line-height:1.35;white-space:nowrap;
 }
+.dock__cta .cur{font-size:.88em}
 .dock__cta:hover{background:#8E3D22}
 .dock__ico{
   width:62px;display:grid;place-items:center;background:var(--ink);color:var(--bone);
