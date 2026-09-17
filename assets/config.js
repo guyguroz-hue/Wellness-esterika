@@ -1,16 +1,14 @@
 // ===== הגדרות =====
-// 1. היכנסו ל-supabase.com → New project (חינם)
-// 2. Project Settings → API → העתיקו את ה-Project URL ואת מפתח ה-anon public
-// 3. הדביקו אותם כאן. עד שזה קורה, הטופס נופל חזרה לשליחה בוואטסאפ.
-// המפתח ה-anon נועד לשימוש בדפדפן ובטוח לפרסום — ההגנה מגיעה ממדיניות ה-RLS
-// שב-supabase/schema.sql (מרשה רק הוספת שורות, בלי קריאה).
+// המפתח הפומבי (publishable) נועד לרוץ בדפדפן ובטוח לפרסום — ההגנה מגיעה
+// ממדיניות ה-RLS שב-supabase/schema.sql: הדף הציבורי יכול רק להוסיף הרשמה.
+// לעולם אל תשימו כאן את מפתח ה-service_role / secret.
 window.ESTERIKA_CONFIG = {
-  SUPABASE_URL: '',        // https://xxxxxxxx.supabase.co
-  SUPABASE_ANON_KEY: '',   // eyJhbGciOi...
+  SUPABASE_URL: 'https://reltdehazsgdxwjozrfo.supabase.co',
+  SUPABASE_ANON_KEY: 'sb_publishable_TEFCY8AWV7dyic8urwvmEA_U3qO_U99',
   WHATSAPP: '972545367306',
 
   // המיילים שמורשים להיכנס לעמוד הנרשמים (admin.html).
-  // חשוב: להוסיף את אותם מיילים גם בטבלת staff ב-supabase/schema.sql
+  // חשוב: אותם מיילים בדיוק צריכים להופיע גם בטבלת staff ב-Supabase.
   MANAGER_EMAILS: [
     'parent1@example.com',
     'parent2@example.com'
