@@ -2,6 +2,8 @@
 :root{
   --bone:#EDE6DA;
   --bone-2:#E3DACB;
+  --sand:#DED2BC;
+  --sand-2:#CFC1A8;
   --paper:#F6F2EA;
   --ink:#16120F;
   --ink-2:#221C17;
@@ -15,11 +17,12 @@
   --sans:"Assistant",system-ui,-apple-system,sans-serif;
 }
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:clip;max-width:100%}
 body{
   margin:0;background:var(--paper);color:var(--ink);
   font-family:var(--sans);font-size:17.5px;line-height:1.85;font-weight:300;
-  -webkit-font-smoothing:antialiased;overflow-x:hidden;padding-bottom:78px;
+  -webkit-font-smoothing:antialiased;padding-bottom:78px;
+  overflow-x:clip;max-width:100%;overscroll-behavior-x:none;
 }
 img{max-width:100%;display:block}
 a{color:inherit}
@@ -36,6 +39,7 @@ b,strong{font-weight:700}
 .band.tight{padding-block:clamp(48px,8vw,84px)}
 .band--bone{background:var(--bone)}
 .band--ink{background:var(--ink);color:var(--bone)}
+.band--sand{background:var(--sand)}
 
 /* Kicker: hairline + tracked label */
 .kicker{
@@ -124,20 +128,23 @@ b,strong{font-weight:700}
 .act__media > img,.act__media .swipe{filter:saturate(.96)}
 .act__media > img{aspect-ratio:5/6;object-fit:cover}
 .act__num{
-  position:absolute;inset-block-start:-.42em;inset-inline-end:-.18em;
-  font-family:var(--display);font-size:clamp(3.4rem,9vw,5.6rem);line-height:1;
-  color:var(--bone);opacity:.92;text-shadow:0 6px 30px rgba(0,0,0,.45);pointer-events:none;
+  position:absolute;inset-block-start:10px;inset-inline-end:16px;
+  font-family:var(--display);font-size:clamp(2.8rem,7.5vw,4.4rem);line-height:1;
+  color:var(--paper);text-shadow:0 4px 24px rgba(22,18,15,.55);pointer-events:none;
 }
 .act__meta{
-  font-size:.74rem;letter-spacing:.24em;color:var(--clay-lt);margin-bottom:1.3em;
-  padding-bottom:.9em;border-bottom:1px solid var(--rule-lt);
+  font-size:.74rem;letter-spacing:.24em;color:var(--clay);margin-bottom:1.3em;
+  padding-bottom:.9em;border-bottom:1px solid var(--rule);
 }
-.act__text p{color:rgba(237,230,218,.8)}
-.act__text .hl{color:var(--clay-lt);font-weight:600;margin-bottom:0}
+.act__text p{color:var(--ink-soft)}
+.act__text .hl{color:var(--clay);font-weight:600;margin-bottom:0}
 
 /* Swipe strip */
 .swipe{position:relative}
-.swipe__track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.swipe__track{
+  display:flex;overflow-x:auto;scroll-snap-type:x mandatory;
+  scrollbar-width:none;overscroll-behavior-x:contain;
+}
 .swipe__track::-webkit-scrollbar{display:none}
 .swipe__track img{flex:0 0 100%;width:100%;aspect-ratio:5/6;object-fit:cover;scroll-snap-align:center}
 .swipe__dots{
@@ -146,7 +153,7 @@ b,strong{font-weight:700}
 }
 .swipe__dots button{
   width:26px;height:2px;padding:0;border:none;border-radius:0;
-  background:rgba(237,230,218,.4);pointer-events:auto;cursor:pointer;transition:.3s;
+  background:rgba(246,242,234,.5);pointer-events:auto;cursor:pointer;transition:.3s;
 }
 .swipe__dots button.is-on{background:var(--bone)}
 
@@ -154,7 +161,7 @@ b,strong{font-weight:700}
 .film{
   display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x proximity;
   padding-inline:max(6vw,calc((100vw - 1080px)/2));padding-block:.5rem 1.2rem;
-  scrollbar-width:none;
+  scrollbar-width:none;overscroll-behavior-x:contain;
 }
 .film::-webkit-scrollbar{display:none}
 .film img{
