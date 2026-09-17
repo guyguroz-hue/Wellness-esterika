@@ -208,3 +208,12 @@ details p{margin:.7em 0 0;color:var(--ink-soft);font-size:.97rem}
 .done h3{font-size:1.4rem;font-weight:800;margin:0 0 .4em}
 .done p{color:var(--ink-soft);margin:0}
 button[disabled]{opacity:.6;cursor:progress}
+
+/* Discreet admin link */
+.topbar{display:flex;justify-content:flex-start;margin-bottom:6px}
+.topbar__link{
+  font-size:.78rem;color:var(--ink-soft);text-decoration:none;opacity:.6;
+  padding:.35em .8em;border:1px solid var(--line);border-radius:999px;background:#fff;
+  transition:.25s;
+}
+.topbar__link:hover{opacity:1;color:var(--green-deep);border-color:var(--green)}

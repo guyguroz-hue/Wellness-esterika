@@ -13,21 +13,34 @@ const db = createClient(CFG.SUPABASE_URL, CFG.SUPABASE_ANON_KEY);
 let rows = [];
 let filter = 'הכל';
 
-// ===== auth =====
+// ===== auth: magic link, no passwords =====
+const ALLOWED = (CFG.MANAGER_EMAILS || []).map(e => e.trim().toLowerCase());
+
+const loginMsg = (text, isError = false) => {
+  $('loginMsg').textContent = text;
+  $('loginMsg').classList.toggle('form__msg--err', isError);
+  $('loginMsg').hidden = false;
+};
+
 $('loginForm').addEventListener('submit', async (e) => {
   e.preventDefault();
-  const f = new FormData(e.target);
+  const email = String(new FormData(e.target).get('email')).trim().toLowerCase();
   const btn = e.target.querySelector('button');
-  btn.disabled = true; btn.textContent = 'מתחבר...';
-  const { error } = await db.auth.signInWithPassword({
-    email: String(f.get('email')).trim(),
-    password: String(f.get('password'))
-  });
-  btn.disabled = false; btn.textContent = 'כניסה';
-  if (error) {
-    $('loginMsg').textContent = 'האימייל או הסיסמה לא נכונים.';
-    $('loginMsg').hidden = false;
+
+  if (ALLOWED.length && !ALLOWED.includes(email)) {
+    loginMsg('המייל הזה לא מורשה לצפות בנרשמים.', true);
+    return;
   }
+
+  btn.disabled = true; btn.textContent = 'שולח...';
+  const { error } = await db.auth.signInWithOtp({
+    email,
+    options: { emailRedirectTo: location.href.split('#')[0] }
+  });
+  btn.disabled = false; btn.textContent = 'שלחו לי קישור כניסה';
+
+  if (error) loginMsg('לא הצלחנו לשלוח את הקישור. נסו שוב בעוד רגע.', true);
+  else loginMsg('שלחנו קישור כניסה ל' + email + ' 📬 פתחו אותו מהטלפון הזה.');
 });
 
 $('logout').addEventListener('click', () => db.auth.signOut());
@@ -38,17 +51,32 @@ db.auth.onAuthStateChange((_e, session) => {
   $('dash').hidden = !inside;
   if (inside) {
     $('who').textContent = session.user.email;
-    load();
+    guard();
   }
 });
 
 // ===== data =====
+// מוודא שהמייל שאיתו נכנסו מופיע ברשימת המנהלים (טבלת staff ב-Supabase)
+async function guard() {
+  const { data, error } = await db.rpc('is_staff');
+  if (error) { load(); return; }   // אם הפונקציה לא קיימת, ה-RLS עדיין מגן
+  if (data === false) {
+    alert('המייל הזה לא מורשה לצפות בנרשמים.');
+    await db.auth.signOut();
+    return;
+  }
+  load();
+}
+
 async function load() {
   const { data, error } = await db
     .from('registrations')
     .select('*')
     .order('created_at', { ascending: false });
-  if (error) { alert('שגיאה בטעינת הנרשמים: ' + error.message); return; }
+  if (error) {
+    alert('שגיאה בטעינת הנרשמים: ' + error.message);
+    return;
+  }
   rows = data || [];
   render();
 }

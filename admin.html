@@ -20,16 +20,13 @@
   <section class="card" id="login">
     <span class="footer__mark">א</span>
     <h2 class="center">הנרשמים לבוקר הוולנסי</h2>
-    <p class="muted center">התחברו כדי לראות את רשימת הנרשמים.</p>
+    <p class="muted center">הזינו את המייל שלכם — נשלח לשם קישור כניסה.<br>אין צורך בסיסמה.</p>
     <form id="loginForm">
-      <label>אימייל
-        <input type="email" name="email" required autocomplete="username" placeholder="your@email.com">
+      <label>המייל שלכם
+        <input type="email" name="email" required autocomplete="email" placeholder="your@email.com">
       </label>
-      <label>סיסמה
-        <input type="password" name="password" required autocomplete="current-password" placeholder="••••••••">
-      </label>
-      <button class="btn btn--primary" type="submit">כניסה</button>
-      <p class="form__msg form__msg--err" id="loginMsg" hidden></p>
+      <button class="btn btn--primary" type="submit">שלחו לי קישור כניסה</button>
+      <p class="form__msg" id="loginMsg" hidden></p>
     </form>
   </section>
 

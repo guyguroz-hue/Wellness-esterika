@@ -25,21 +25,40 @@ create index if not exists registrations_created_at_idx
   on public.registrations (created_at desc);
 
 -- ===== גישה לעמוד הניהול (admin.html) =====
--- משתמשים מחוברים (ההורים) רשאים לראות ולעדכן את הנרשמים.
+-- רשימת המיילים שמורשים לראות את הנרשמים. הוסיפו כאן את המיילים של המנהלים.
+create table if not exists public.staff (
+  email text primary key
+);
+alter table public.staff enable row level security;   -- אף אחד לא קורא אותה מהדפדפן
+
+insert into public.staff (email) values
+  ('parent1@example.com'),
+  ('parent2@example.com')
+on conflict (email) do nothing;
+
+-- רק מי שנכנס עם מייל שמופיע בטבלת staff יכול לראות ולעדכן נרשמים.
+create or replace function public.is_staff() returns boolean
+  language sql stable security definer set search_path = public as $$
+    select exists (
+      select 1 from public.staff
+      where lower(email) = lower(coalesce(auth.jwt() ->> 'email', ''))
+    );
+  $$;
+
 drop policy if exists "staff can read registrations" on public.registrations;
 create policy "staff can read registrations"
   on public.registrations for select
   to authenticated
-  using (true);
+  using (public.is_staff());
 
 drop policy if exists "staff can update registrations" on public.registrations;
 create policy "staff can update registrations"
   on public.registrations for update
   to authenticated
-  using (true) with check (true);
+  using (public.is_staff()) with check (public.is_staff());
 
 drop policy if exists "staff can delete registrations" on public.registrations;
 create policy "staff can delete registrations"
   on public.registrations for delete
   to authenticated
-  using (true);
+  using (public.is_staff());
