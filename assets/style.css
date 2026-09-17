@@ -217,3 +217,25 @@ button[disabled]{opacity:.6;cursor:progress}
   transition:.25s;
 }
 .topbar__link:hover{opacity:1;color:var(--green-deep);border-color:var(--green)}
+
+/* Swipeable image strip */
+.swipe{position:relative}
+.swipe__track{
+  display:flex;overflow-x:auto;scroll-snap-type:x mandatory;
+  scrollbar-width:none;-ms-overflow-style:none;
+}
+.swipe__track::-webkit-scrollbar{display:none}
+.swipe__track img{
+  flex:0 0 100%;width:100%;aspect-ratio:16/11;object-fit:cover;
+  scroll-snap-align:center;
+}
+.swipe__dots{
+  position:absolute;inset-block-end:12px;inset-inline:0;
+  display:flex;gap:7px;justify-content:center;pointer-events:none;
+}
+.swipe__dots button{
+  width:8px;height:8px;padding:0;border:none;border-radius:50%;
+  background:rgba(255,255,255,.55);box-shadow:0 1px 3px rgba(0,0,0,.35);
+  pointer-events:auto;cursor:pointer;transition:.25s;
+}
+.swipe__dots button.is-on{background:#fff;width:22px;border-radius:999px}

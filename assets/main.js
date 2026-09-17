@@ -89,3 +89,28 @@ form?.addEventListener('submit', async (e) => {
 
 form?.querySelectorAll('input').forEach(i =>
   i.addEventListener('input', () => i.classList.remove('is-err')));
+
+// ===== Swipeable image strips =====
+document.querySelectorAll('[data-swipe]').forEach(box => {
+  const track = box.querySelector('.swipe__track');
+  const dots = box.querySelector('.swipe__dots');
+  const slides = [...track.children];
+  if (slides.length < 2) return;
+  const isRtl = getComputedStyle(track).direction === 'rtl';
+
+  slides.forEach((_, i) => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.setAttribute('aria-label', `תמונה ${i + 1}`);
+    b.addEventListener('click', () =>
+      track.scrollTo({ left: track.scrollWidth / slides.length * i * (isRtl ? -1 : 1), behavior: 'smooth' }));
+    dots.append(b);
+  });
+
+  const mark = () => {
+    const i = Math.round(Math.abs(track.scrollLeft) / track.clientWidth);
+    [...dots.children].forEach((d, n) => d.classList.toggle('is-on', n === i));
+  };
+  track.addEventListener('scroll', () => requestAnimationFrame(mark), { passive: true });
+  mark();
+});
