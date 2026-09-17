@@ -173,12 +173,13 @@
 </section>
 
 <!-- SIGNUP -->
-<section class="band band--ink" id="form">
+<section class="band band--blush" id="form">
   <div class="wrap wrap--narrow">
-    <p class="kicker kicker--light reveal">הרשמה</p>
-    <h2 class="display reveal">שמרו לי מקום</h2>
-    <p class="muted reveal">מלאו את הפרטים ונשמור לכם מקום במפגש.</p>
-    <form id="signup" class="reveal" novalidate>
+    <div class="signup reveal">
+      <span class="signup__tag">הרשמה</span>
+      <h2>שמרו לי מקום</h2>
+      <p class="signup__sub">מלאו את הפרטים ונשמור לכם מקום במפגש.</p>
+      <form id="signup" novalidate>
       <label>שם מלא <b>*</b>
         <input type="text" name="name" required placeholder="השם שלך">
       </label>
@@ -203,10 +204,11 @@
       <button class="btn btn--primary" type="submit">שמרו לי מקום</button>
       <p class="form__msg" id="msg" hidden></p>
     </form>
-    <div class="done" id="done" hidden>
-      <span class="done__ico" aria-hidden="true">🌿</span>
-      <h3>נרשמתם!</h3>
-      <p>קיבלנו את הפרטים ונחזור אליכם בוואטסאפ עם כל המידע והתשלום.<br>נתראה בבוקר 🤍</p>
+      <div class="done" id="done" hidden>
+        <span class="done__ico" aria-hidden="true">🌿</span>
+        <h3>נרשמתם!</h3>
+        <p>קיבלנו את הפרטים ונחזור אליכם בוואטסאפ עם כל המידע והתשלום.<br>נתראה בבוקר 🤍</p>
+      </div>
     </div>
   </div>
 </section>
