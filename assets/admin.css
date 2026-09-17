@@ -4,34 +4,34 @@
 .admin__top{display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .admin__top h2{margin:0}
 .admin__top .muted{margin:0;font-size:.9rem}
-.link{background:none;border:none;color:var(--green);font:inherit;font-weight:600;cursor:pointer;padding:.4em}
+.link{background:none;border:none;color:var(--clay);font:inherit;font-weight:600;cursor:pointer;padding:.4em}
 .link:hover{text-decoration:underline}
 
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px}
-.stat{background:var(--green-tint);border-radius:16px;padding:16px 8px;text-align:center}
-.stat b{display:block;font-size:1.8rem;font-weight:800;color:var(--green-deep);line-height:1.1}
+.stat{background:var(--bone-2);border-radius:0;padding:16px 8px;text-align:center}
+.stat b{display:block;font-size:1.8rem;font-weight:800;color:var(--clay);line-height:1.1}
 .stat span{font-size:.78rem;color:var(--ink-soft)}
 
 .admin__tools{display:grid;gap:12px}
 .filters{display:flex;gap:8px;flex-wrap:wrap}
 .chip{
-  background:#fff;border:1px solid var(--line);border-radius:999px;
+  background:#fff;border:1px solid var(--rule);border-radius:0;
   padding:.4em 1em;font:inherit;font-size:.88rem;font-weight:500;cursor:pointer;
   color:var(--ink-soft);transition:.2s;
 }
-.chip:hover{border-color:var(--green)}
-.chip.is-on{background:var(--green);border-color:var(--green);color:#fff;font-weight:700}
+.chip:hover{border-color:var(--clay)}
+.chip.is-on{background:var(--clay);border-color:var(--clay);color:#fff;font-weight:700}
 .admin__actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.btn--soft{background:var(--green-tint);color:var(--green-deep);font-size:.95rem;padding:.8em 1em}
+.btn--soft{background:var(--bone-2);color:var(--clay);font-size:.95rem;padding:.8em 1em}
 .btn--soft:hover{background:#E1E8DD}
 
 .reg{position:relative;padding:20px}
 .reg::before{
   content:"";position:absolute;inset-block:16px;inset-inline-start:0;
-  width:4px;border-radius:0 4px 4px 0;background:var(--line);
+  width:4px;border-radius:0;background:var(--rule);
 }
 .reg[data-status="חדש"]::before{background:#E0A84E}
-.reg[data-status="אושר"]::before{background:var(--green)}
+.reg[data-status="אושר"]::before{background:var(--clay)}
 .reg[data-status="שילם"]::before{background:#3E8F63}
 .reg[data-status="ביטל"]::before{background:#C2704B}
 .reg[data-status="ביטל"]{opacity:.55}
@@ -44,7 +44,7 @@
 .reg__wa{color:#1EA855;font-weight:600}
 .reg__people{margin:0 0 .4em;font-size:.95rem;color:var(--ink-soft)}
 .reg__notes{
-  margin:.6em 0;background:var(--bg);border-radius:12px;padding:.7em .9em;
+  margin:.6em 0;background:var(--bone);border-radius:0;padding:.7em .9em;
   font-size:.92rem;color:var(--ink-soft);
 }
 .reg__status{display:flex;gap:6px;flex-wrap:wrap;margin-top:.9em}
@@ -56,3 +56,19 @@
   .stat b{font-size:1.3rem}
   .admin__actions{grid-template-columns:1fr}
 }
+
+/* התאמות לשפת העיצוב החדשה */
+.admin{padding-bottom:0}
+.admin .page{width:min(760px,90vw);margin-inline:auto;padding:28px 0 60px}
+.admin .card{background:var(--paper)}
+.admin h2{font-family:var(--display);font-weight:400}
+.admin input{color:var(--ink);border-bottom-color:var(--rule)}
+.admin input::placeholder{color:rgba(22,18,15,.3)}
+.admin input:focus{border-color:var(--clay)}
+.admin form label{color:var(--ink-soft)}
+.admin .form__msg{text-align:start;color:var(--clay)}
+.admin__mark{
+  font-family:var(--display);font-size:1.8rem;display:block;text-align:center;margin-bottom:.2em;
+}
+.stat b{font-family:var(--display);font-weight:400}
+.reg__head h3{font-family:var(--display);font-weight:400}

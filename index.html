@@ -9,87 +9,102 @@
 <meta property="og:description" content="יוגה · נשימות · אמבטיית קרח · קפה וארוחת בוקר">
 <meta property="og:image" content="assets/images/estrika-cart.jpg">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#F7F5F0">
+<meta name="theme-color" content="#16120F">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Suez+One&family=Assistant:wght@200;300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍃</text></svg>">
 </head>
 <body>
 
-<main class="page">
+<!-- MASTHEAD -->
+<header class="mast" id="top">
+  <a class="mast__brand" href="#top">
+    אסתריקה<em>est. coffee truck</em>
+  </a>
+  <a class="mast__admin" href="admin.html">כניסה למנהלים</a>
+</header>
 
-  <div class="topbar">
-    <a class="topbar__link" href="admin.html">כניסה למנהלים</a>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__media">
+    <img src="assets/images/estrika-cart.jpg" alt="עגלת הקפה אסתריקה בשעת שקיעה" fetchpriority="high">
+  </div>
+  <div class="hero__inner">
+    <p class="kicker kicker--light reveal">בוקר אחד · שלוש תחנות · על הירקון</p>
+    <h1 class="reveal">הבוקר<br>הוולנסי</h1>
+    <p class="hero__lead reveal">בוקר אחד שמחבר תנועה, נשימה וטבילה מודרכת במי קרח —
+      ומסתיים אצלנו בעגלה, עם כריך טרי וקפה.</p>
+    <ul class="hero__rail reveal">
+      <li><b>07:00</b><span>התכנסות</span></li>
+      <li><b>4</b><span>שעות</span></li>
+      <li><b>250<i>₪</i></b><span>הרשמה מוקדמת</span></li>
+    </ul>
+  </div>
+  <div class="hero__marquee" aria-hidden="true">
+    <span>יוגה · נשימות · אמבטיית קרח · קפה וארוחת בוקר · יוגה · נשימות · אמבטיית קרח · קפה וארוחת בוקר ·&nbsp;</span>
+    <span>יוגה · נשימות · אמבטיית קרח · קפה וארוחת בוקר · יוגה · נשימות · אמבטיית קרח · קפה וארוחת בוקר ·&nbsp;</span>
+  </div>
+</section>
+
+<!-- SPECS -->
+<section class="band band--bone" id="details">
+  <div class="wrap">
+    <p class="kicker reveal">פרטי המפגש</p>
+    <dl class="specs">
+      <div class="spec reveal">
+        <dt>תאריך ושעה</dt>
+        <dd><b>בקרוב</b> — יום שבת, התכנסות 07:00 וסיום סביב 11:00.
+          התאריך המדויק יתפרסם כאן ובאינסטגרם שלנו.</dd>
+      </div>
+      <div class="spec reveal">
+        <dt>מיקום</dt>
+        <dd>📍 אסתריקה – עגלת קפה טראק על הירקון</dd>
+      </div>
+      <div class="spec reveal">
+        <dt>מה בתוכנית</dt>
+        <dd>שיעור יוגה, סדנת נשימות והתחברות לנפש, טבילה מודרכת באמבטיית קרח
+          בליווי צמוד, ובסיום כריך, קפה ופינוקים נוספים בעגלה</dd>
+      </div>
+      <div class="spec reveal">
+        <dt>מה להביא</dt>
+        <dd><b>בגד ים ומגבת — אין צורך להביא מזרן!</b>
+          מזרני יוגה וכל הציוד מחכים לכם במקום. כדאי להוסיף שכבה חמה לאחרי המים 🧘</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<!-- PROGRAM -->
+<section class="band band--ink" id="program">
+  <div class="wrap">
+    <p class="kicker kicker--light reveal">מהלך הבוקר</p>
   </div>
 
-  <!-- HERO -->
-  <header class="hero" id="top">
-    <figure class="hero__img reveal">
-      <img src="assets/images/estrika-cart.jpg" alt="עגלת הקפה אסתריקה בשעת שקיעה" fetchpriority="high">
-    </figure>
-    <h1 class="reveal">הבוקר הוולנסי<br><span>של אסתריקה</span></h1>
-    <p class="hero__sub reveal">בוקר אחד שמחבר תנועה, נשימה וטבילה מודרכת במי קרח —
-      ומסתיים אצלנו בעגלה, עם כריך טרי וקפה.</p>
-    <a class="btn btn--primary reveal" href="#form">🌿 שמרו לי מקום בבוקר הקרוב</a>
-    <ul class="hero__chips reveal">
-      <li>🧘 שעת יוגה</li>
-      <li>🌬️ סדנת נשימות</li>
-      <li>🧊 אמבטיית קרח</li>
-      <li>🥐 קפה וארוחת בוקר</li>
-    </ul>
-  </header>
-
-  <!-- DETAILS CARD -->
-  <section class="card reveal" id="details">
-    <h2>פרטי המפגש</h2>
-    <ul class="info">
-      <li>
-        <span class="info__ico" aria-hidden="true">🗓️</span>
-        <div><span class="info__label">תאריך ושעה</span>
-          <p><b>בקרוב</b> — יום שבת, התכנסות 07:00 וסיום סביב 11:00.<br>
-            התאריך המדויק יתפרסם כאן ובאינסטגרם שלנו.</p></div>
-      </li>
-      <li>
-        <span class="info__ico" aria-hidden="true">📌</span>
-        <div><span class="info__label">מיקום</span>
-          <p>📍 אסתריקה – עגלת קפה טראק על הירקון</p></div>
-      </li>
-      <li>
-        <span class="info__ico" aria-hidden="true">🕒</span>
-        <div><span class="info__label">מה בתוכנית</span>
-          <p>שיעור יוגה, סדנת נשימות והתחברות לנפש, טבילה מודרכת באמבטיית קרח
-            בליווי צמוד, ובסיום כריך, קפה ופינוקים נוספים בעגלה</p></div>
-      </li>
-      <li>
-        <span class="info__ico" aria-hidden="true">✨</span>
-        <div><span class="info__label">מה להביא</span>
-          <p class="info__strong">בגד ים ומגבת — אין צורך להביא מזרן!</p>
-          <p>מזרני יוגה וכל הציוד מחכים לכם במקום. כדאי להוסיף שכבה חמה לאחרי המים 🧘</p></div>
-      </li>
-    </ul>
-  </section>
-
-  <!-- STAGE 1 -->
-  <section class="card card--media reveal">
-    <figure><img src="assets/images/yoga-1.png" alt="שיעור יוגה קבוצתי" loading="lazy"></figure>
-    <div class="card__body">
-      <span class="pill">שלב 1 · שעה</span>
-      <h2>🧘 שיעור יוגה לפתיחת הבוקר</h2>
+  <article class="act reveal">
+    <div class="act__media">
+      <img src="assets/images/yoga-1.png" alt="שיעור יוגה קבוצתי" loading="lazy">
+      <span class="act__num">01</span>
+    </div>
+    <div class="act__text">
+      <p class="act__meta">שלב 1 · שעה</p>
+      <h2>שיעור יוגה<br>לפתיחת הבוקר</h2>
       <p>מתחילים על המזרן, בקצב של בוקר. שיעור ויניאסה זורם ונגיש שפותח את הגוף,
         מאריך את הנשימה ומנקה את הראש מהרעש של השבוע.</p>
       <p>המנחה עוברת בין המשתתפים ומתאימה תרגילים אישית, כך שגם מי שעולה על מזרן בפעם
         הראשונה מרגיש בנוח — ואין שום דבר ״נכון״ שצריך לדעת מראש.</p>
     </div>
-  </section>
+  </article>
 
-  <!-- STAGE 2 -->
-  <section class="card card--media reveal">
-    <figure><img src="assets/images/ice-bath-1.png" alt="טבילה באמבטיית קרח בליווי מנחה" loading="lazy"></figure>
-    <div class="card__body">
-      <span class="pill">שלב 2 · שעה וחצי–שעתיים</span>
-      <h2>🧊 נשימות ואמבטיית קרח</h2>
+  <article class="act act--flip reveal">
+    <div class="act__media">
+      <img src="assets/images/ice-bath-1.png" alt="טבילה באמבטיית קרח בליווי מנחה" loading="lazy">
+      <span class="act__num">02</span>
+    </div>
+    <div class="act__text">
+      <p class="act__meta">שלב 2 · שעה וחצי–שעתיים</p>
+      <h2>נשימות<br>ואמבטיית קרח</h2>
       <p>נשימות ואמבטיית קרח הן ההזדמנות לעצור רגע, לנשום, להתנתק מהשגרה ולתת לעצמנו
         חוויה קצת אחרת.</p>
       <p>מתחילים בתרגול נשימה מודרך שמכניס את הגוף והראש לרוגע ולנוכחות, ממשיכים לרגע של
@@ -97,63 +112,73 @@
       <p>בעזרת הנשימה לומדים להירגע גם בתוך הקור, להקשיב לגוף וליהנות מתחושת החיוניות
         שמגיעה אחר כך. אתם קובעים את הקצב — ואפשר גם רק לנשום מהצד 🙂</p>
     </div>
-  </section>
+  </article>
 
-  <!-- STAGE 3 -->
-  <section class="card card--media reveal">
-    <div class="swipe" data-swipe>
-      <div class="swipe__track">
-        <img src="assets/images/food-3.jpg" alt="מגש ארוחת בוקר: טוסטים, מאפים, זיתים וממרחים" loading="lazy">
-        <img src="assets/images/food-1.jpg" alt="קפה ורולדת קינמון על מגש" loading="lazy">
-        <img src="assets/images/food-2.jpg" alt="קפה וכריכים על השולחן בחוץ" loading="lazy">
+  <article class="act reveal">
+    <div class="act__media">
+      <div class="swipe" data-swipe>
+        <div class="swipe__track">
+          <img src="assets/images/food-3.jpg" alt="מגש ארוחת בוקר: טוסטים, מאפים, זיתים וממרחים" loading="lazy">
+          <img src="assets/images/food-1.jpg" alt="קפה ורולדת קינמון על מגש" loading="lazy">
+          <img src="assets/images/food-2.jpg" alt="קפה וכריכים על השולחן בחוץ" loading="lazy">
+        </div>
+        <div class="swipe__dots" aria-hidden="true"></div>
       </div>
-      <div class="swipe__dots" aria-hidden="true"></div>
+      <span class="act__num">03</span>
     </div>
-    <div class="card__body">
-      <span class="pill">שלב 3 · שעה</span>
-      <h2>🥐 ארוחת בוקר בעגלת הקפה</h2>
+    <div class="act__text">
+      <p class="act__meta">שלב 3 · שעה</p>
+      <h2>ארוחת בוקר<br>בעגלת הקפה</h2>
       <p>מסיימים את הבוקר אצלנו בעגלה. יושבים בחוץ מול הירקון עם כריך טרי,
         קפה ופינוקים נוספים — הכול כלול במחיר המפגש.</p>
       <p>בדיוק מה שהגוף מבקש אחרי בוקר כזה: זמן לשבת בנחת, לדבר
         ולסגור את הבוקר יחד. ומי שירצה עוד משהו מהתפריט — העגלה פתוחה.</p>
-      <p class="note">יש בתפריט גם אפשרויות טבעוניות וללא גלוטן.</p>
+      <p class="hl">יש בתפריט גם אפשרויות טבעוניות וללא גלוטן.</p>
     </div>
-  </section>
+  </article>
+</section>
 
-  <!-- GALLERY -->
-  <section class="card reveal" id="gallery">
-    <h2>תמונות נוספות</h2>
-    <div class="gallery">
-      <img src="assets/images/yoga-2.jpg" alt="תרגול בוקר" loading="lazy">
-      <img src="assets/images/ice-bath-1.png" alt="טבילה מלווה" loading="lazy">
-      <img src="assets/images/yoga-1.png" alt="שיעור יוגה" loading="lazy">
-      <img src="assets/images/ice-bath-2.png" alt="אמבטיות הקרח במפגש" loading="lazy">
-    </div>
-  </section>
+<!-- FILMSTRIP -->
+<section class="band band--bone tight" id="gallery">
+  <div class="wrap"><p class="kicker reveal">תמונות נוספות</p></div>
+  <div class="film reveal">
+    <img src="assets/images/yoga-2.jpg" alt="תרגול בוקר" loading="lazy">
+    <img src="assets/images/ice-bath-1.png" alt="טבילה מלווה" loading="lazy">
+    <img src="assets/images/yoga-1.png" alt="שיעור יוגה" loading="lazy">
+    <img src="assets/images/ice-bath-2.png" alt="אמבטיות הקרח במפגש" loading="lazy">
+    <img src="assets/images/food-3.jpg" alt="ארוחת בוקר בעגלה" loading="lazy">
+  </div>
+</section>
 
-  <!-- PRICING -->
-  <section class="card card--price reveal" id="price">
-    <p class="price__head">מחיר השתתפות במפגש</p>
-    <div class="price__grid">
-      <div class="price__box price__box--hl">
-        <span>הרשמה מוקדמת</span>
-        <b>250 <i>₪</i></b>
+<!-- TICKET -->
+<section class="band band--bone" id="price">
+  <div class="wrap">
+    <div class="ticket reveal">
+      <p class="kicker">מחיר השתתפות</p>
+      <div class="ticket__rows">
+        <div class="ticket__row is-lead">
+          <span>הרשמה מוקדמת</span>
+          <b>250<i>₪</i></b>
+        </div>
+        <div class="ticket__row">
+          <span>לאחר מכן</span>
+          <b>275<i>₪</i></b>
+        </div>
       </div>
-      <div class="price__box">
-        <span>לאחר מכן</span>
-        <b>275 <i>₪</i></b>
-      </div>
+      <p class="ticket__incl">כולל שיעור יוגה, סדנת נשימות וטבילה באמבטיית קרח בליווי צמוד —
+        ובסיום כריך, קפה ופינוקים נוספים בעגלה</p>
+      <p class="ticket__fine">* ההרשמה לא מהווה תשלום מיידי, התשלום ייגבה בהודעה פרטית</p>
     </div>
-    <p class="price__incl">כולל שיעור יוגה, סדנת נשימות וטבילה באמבטיית קרח בליווי צמוד —
-      ובסיום כריך, קפה ופינוקים נוספים בעגלה</p>
-    <p class="price__fine">* ההרשמה לא מהווה תשלום מיידי, התשלום ייגבה בהודעה פרטית</p>
-  </section>
+  </div>
+</section>
 
-  <!-- FORM -->
-  <section class="card reveal" id="form">
-    <h2>טופס הרשמה</h2>
-    <p class="muted">מלאו את הפרטים ונשמור לכם מקום במפגש.</p>
-    <form id="signup" novalidate>
+<!-- SIGNUP -->
+<section class="band band--ink" id="form">
+  <div class="wrap wrap--narrow">
+    <p class="kicker kicker--light reveal">הרשמה</p>
+    <h2 class="display reveal">שמרו לי מקום</h2>
+    <p class="muted reveal">מלאו את הפרטים ונשמור לכם מקום במפגש.</p>
+    <form id="signup" class="reveal" novalidate>
       <label>שם מלא <b>*</b>
         <input type="text" name="name" required placeholder="השם שלך">
       </label>
@@ -166,10 +191,10 @@
       <fieldset class="choice">
         <legend>כמה אתם מגיעים?</legend>
         <div class="choice__grid">
-          <label><input type="radio" name="count" value="לבד" checked><span>🧘 לבד</span></label>
-          <label><input type="radio" name="count" value="שניים"><span>👯 שניים</span></label>
-          <label><input type="radio" name="count" value="קבוצה"><span>🌿 קבוצה</span></label>
-          <label><input type="radio" name="count" value="עוד לא בטוח"><span>🤔 עוד לא בטוח</span></label>
+          <label><input type="radio" name="count" value="לבד" checked><span>לבד</span></label>
+          <label><input type="radio" name="count" value="שניים"><span>שניים</span></label>
+          <label><input type="radio" name="count" value="קבוצה"><span>קבוצה</span></label>
+          <label><input type="radio" name="count" value="עוד לא בטוח"><span>עוד לא בטוח</span></label>
         </div>
       </fieldset>
       <label>הערות / מגבלות רפואיות (רשות)
@@ -183,66 +208,64 @@
       <h3>נרשמתם!</h3>
       <p>קיבלנו את הפרטים ונחזור אליכם בוואטסאפ עם כל המידע והתשלום.<br>נתראה בבוקר 🤍</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FAQ -->
-  <section class="card reveal" id="faq">
-    <h2>שאלות נפוצות</h2>
-    <details><summary>אף פעם לא עשיתי יוגה. זה בשבילי?</summary>
-      <p>לגמרי. השיעור בנוי לכל הרמות, ללא צורך בניסיון קודם, והמנחה מתאימה תרגילים אישית.</p></details>
-    <details><summary>אני חייב להיכנס לאמבטיית הקרח?</summary>
-      <p>ממש לא. חלק מהמשתתפים בוחרים רק בסדנת הנשימות. אף אחד לא נכנס למים בלי מנחה לצידו,
-        ואין כאן שום תחרות.</p></details>
-    <details><summary>כמה זמן נמצאים במים?</summary>
-      <p>בין 30 שניות לשלוש דקות, לפי מה שמרגיש נכון באותו רגע. המטרה היא ללמוד לנשום גם
-        כשלא נעים, לא לשבור שיאים.</p></details>
-    <details><summary>יש אוכל טבעוני או ללא גלוטן?</summary>
-      <p>כן, בתפריט של העגלה יש אפשרויות טבעוניות וללא גלוטן. אפשר לציין בהרשמה
-        ונוודא שיהיה.</p></details>
-    <details><summary>מתאים בהריון או עם בעיות לב?</summary>
-      <p>יוגה ונשימות — בדרך כלל כן, בהתאמות. טבילה במי קרח אינה מומלצת בהריון או במצבים
-        לבביים. התייעצו עם הרופא שלכם וספרו לנו מראש.</p></details>
-  </section>
+<!-- FAQ -->
+<section class="band band--bone" id="faq">
+  <div class="wrap wrap--narrow">
+    <p class="kicker reveal">שאלות נפוצות</p>
+    <div class="qa reveal">
+      <details><summary>אף פעם לא עשיתי יוגה. זה בשבילי?</summary>
+        <p>לגמרי. השיעור בנוי לכל הרמות, ללא צורך בניסיון קודם, והמנחה מתאימה תרגילים אישית.</p></details>
+      <details><summary>אני חייב להיכנס לאמבטיית הקרח?</summary>
+        <p>ממש לא. חלק מהמשתתפים בוחרים רק בסדנת הנשימות. אף אחד לא נכנס למים בלי מנחה לצידו,
+          ואין כאן שום תחרות.</p></details>
+      <details><summary>כמה זמן נמצאים במים?</summary>
+        <p>בין 30 שניות לשלוש דקות, לפי מה שמרגיש נכון באותו רגע. המטרה היא ללמוד לנשום גם
+          כשלא נעים, לא לשבור שיאים.</p></details>
+      <details><summary>יש אוכל טבעוני או ללא גלוטן?</summary>
+        <p>כן, בתפריט של העגלה יש אפשרויות טבעוניות וללא גלוטן. אפשר לציין בהרשמה
+          ונוודא שיהיה.</p></details>
+      <details><summary>מתאים בהריון או עם בעיות לב?</summary>
+        <p>יוגה ונשימות — בדרך כלל כן, בהתאמות. טבילה במי קרח אינה מומלצת בהריון או במצבים
+          לבביים. התייעצו עם הרופא שלכם וספרו לנו מראש.</p></details>
+    </div>
+  </div>
+</section>
 
-  <section class="card card--ig reveal">
-    <span class="ig__ico" aria-hidden="true">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true">
-      <rect x="3" y="3" width="18" height="18" rx="5.4"/>
-      <circle cx="12" cy="12" r="4.1"/>
-      <circle cx="17.3" cy="6.7" r="1.25" fill="currentColor" stroke="none"/>
-    </svg>
-    </span>
-    <h2>עוקבים אחרינו?</h2>
-    <p class="muted">כל המפגשים, התמונות והתאריכים החדשים עולים קודם כל לאינסטגרם של אסתריקה.</p>
-    <a class="btn btn--ig" href="https://www.instagram.com/esterika_cafe" target="_blank" rel="noopener">@esterika_cafe</a>
-  </section>
-
-  <footer class="footer">
-    <span class="footer__mark">א</span>
-    <p><b>אסתריקה</b><br>עגלת קפה · הבוקר הוולנסי</p>
-    <div class="footer__links">
-      <a href="https://www.instagram.com/esterika_cafe" target="_blank" rel="noopener">אינסטגרם</a>
+<!-- FOOTER -->
+<footer class="foot">
+  <div class="wrap">
+    <p class="foot__mark">אסתריקה</p>
+    <p class="foot__line">עגלת קפה על הירקון · הבוקר הוולנסי</p>
+    <p class="foot__follow">כל המפגשים, התמונות והתאריכים החדשים עולים קודם כל לאינסטגרם שלנו.</p>
+    <div class="foot__links">
+      <a href="https://www.instagram.com/esterika_cafe" target="_blank" rel="noopener">@esterika_cafe</a>
       <a href="https://wa.me/972545367306" target="_blank" rel="noopener">וואטסאפ</a>
       <a href="tel:+972545367306">054-536-7306</a>
-      <a href="#top">חזרה למעלה</a>
     </div>
     <small>© אסתריקה. כל הזכויות שמורות.</small>
-  </footer>
+  </div>
+</footer>
 
-</main>
-
-<div class="fabs">
-  <a class="fab fab--wa" href="https://wa.me/972545367306?text=%D7%94%D7%99%D7%99%20%D7%90%D7%A1%D7%AA%D7%A8%D7%99%D7%A7%D7%94%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%94%D7%91%D7%95%D7%A7%D7%A8%20%D7%94%D7%95%D7%95%D7%9C%D7%A0%D7%A1%D7%99" target="_blank" rel="noopener" aria-label="שלחו לנו וואטסאפ">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"/></svg>
-  </a>
-  <a class="fab fab--ig" href="https://www.instagram.com/esterika_cafe" target="_blank" rel="noopener" aria-label="האינסטגרם של אסתריקה">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true">
-      <rect x="3" y="3" width="18" height="18" rx="5.4"/>
-      <circle cx="12" cy="12" r="4.1"/>
-      <circle cx="17.3" cy="6.7" r="1.25" fill="currentColor" stroke="none"/>
+<!-- DOCK -->
+<nav class="dock" aria-label="פעולות מהירות">
+  <a class="dock__cta" href="#form">שמרו לי מקום</a>
+  <a class="dock__ico" href="https://wa.me/972545367306?text=%D7%94%D7%99%D7%99%20%D7%90%D7%A1%D7%AA%D7%A8%D7%99%D7%A7%D7%94%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%94%D7%91%D7%95%D7%A7%D7%A8%20%D7%94%D7%95%D7%95%D7%9C%D7%A0%D7%A1%D7%99" target="_blank" rel="noopener" aria-label="וואטסאפ">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round">
+      <path d="M3.2 20.8 4.6 16A8.6 8.6 0 1 1 8 19.4z"/>
+      <path d="M8.6 8.4c.5-.06.7.14.9.6l.7 1.6-.9 1.1c.6 1.2 1.6 2.2 2.9 2.8l1-1 1.7.75c.45.2.63.4.55.9-.1.66-.9 1.3-1.6 1.35-2.6.2-6.6-3.7-6.4-6.4.05-.7.65-1.5 1.15-1.7"/>
     </svg>
   </a>
-</div>
+  <a class="dock__ico" href="https://www.instagram.com/esterika_cafe" target="_blank" rel="noopener" aria-label="אינסטגרם">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+      <rect x="3.4" y="3.4" width="17.2" height="17.2" rx="5"/>
+      <circle cx="12" cy="12" r="4"/>
+      <circle cx="17.2" cy="6.8" r="1.15" fill="currentColor" stroke="none"/>
+    </svg>
+  </a>
+</nav>
 
 <script src="assets/config.js"></script>
 <script src="assets/main.js"></script>
