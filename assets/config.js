@@ -10,7 +10,8 @@ window.ESTERIKA_CONFIG = {
   // המיילים שמורשים להיכנס לעמוד הנרשמים (admin.html).
   // חשוב: אותם מיילים בדיוק צריכים להופיע גם בטבלת staff ב-Supabase.
   MANAGER_EMAILS: [
-    'parent1@example.com',
-    'parent2@example.com'
+    'gmrozental@gmail.com',
+    'hilirozental@gmail.com',
+    'esterikatruck@gmail.com'
   ]
 };

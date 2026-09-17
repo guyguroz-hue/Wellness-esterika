@@ -32,8 +32,9 @@ create table if not exists public.staff (
 alter table public.staff enable row level security;   -- אף אחד לא קורא אותה מהדפדפן
 
 insert into public.staff (email) values
-  ('parent1@example.com'),
-  ('parent2@example.com')
+  ('gmrozental@gmail.com'),
+  ('hilirozental@gmail.com'),
+  ('esterikatruck@gmail.com')
 on conflict (email) do nothing;
 
 -- רק מי שנכנס עם מייל שמופיע בטבלת staff יכול לראות ולעדכן נרשמים.
