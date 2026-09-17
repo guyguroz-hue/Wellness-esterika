@@ -72,3 +72,7 @@
 }
 .stat b{font-family:var(--display);font-weight:400}
 .reg__head h3{font-family:var(--display);font-weight:400}
+.chip--del{
+  margin-inline-start:auto;color:#8E3D22;border-color:rgba(142,61,34,.35);
+}
+.chip--del:hover{background:#8E3D22;border-color:#8E3D22;color:var(--paper)}

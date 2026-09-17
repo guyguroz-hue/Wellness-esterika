@@ -13,34 +13,26 @@ const db = createClient(CFG.SUPABASE_URL, CFG.SUPABASE_ANON_KEY);
 let rows = [];
 let filter = 'הכל';
 
-// ===== auth: magic link, no passwords =====
-const ALLOWED = (CFG.MANAGER_EMAILS || []).map(e => e.trim().toLowerCase());
-
-const loginMsg = (text, isError = false) => {
-  $('loginMsg').textContent = text;
-  $('loginMsg').classList.toggle('form__msg--err', isError);
-  $('loginMsg').hidden = false;
-};
-
+// ===== auth: קוד אחד משותף =====
+// הקוד הוא הסיסמה של חשבון הניהול ב-Supabase. כך אין מה לזכור חוץ מהקוד,
+// והרשימה עדיין מוגנת ברמת מסד הנתונים ולא רק בדפדפן.
 $('loginForm').addEventListener('submit', async (e) => {
   e.preventDefault();
-  const email = String(new FormData(e.target).get('email')).trim().toLowerCase();
+  const code = String(new FormData(e.target).get('code'));
   const btn = e.target.querySelector('button');
 
-  if (ALLOWED.length && !ALLOWED.includes(email)) {
-    loginMsg('המייל הזה לא מורשה לצפות בנרשמים.', true);
-    return;
-  }
-
-  btn.disabled = true; btn.textContent = 'שולח...';
-  const { error } = await db.auth.signInWithOtp({
-    email,
-    options: { emailRedirectTo: location.href.split('#')[0] }
+  btn.disabled = true; btn.textContent = 'רגע...';
+  const { error } = await db.auth.signInWithPassword({
+    email: CFG.ADMIN_EMAIL,
+    password: code
   });
-  btn.disabled = false; btn.textContent = 'שלחו לי קישור כניסה';
+  btn.disabled = false; btn.textContent = 'כניסה';
 
-  if (error) loginMsg('לא הצלחנו לשלוח את הקישור. נסו שוב בעוד רגע.', true);
-  else loginMsg('שלחנו קישור כניסה ל' + email + ' 📬 פתחו אותו מהטלפון הזה.');
+  if (error) {
+    $('loginMsg').textContent = 'הקוד שגוי. נסו שוב.';
+    $('loginMsg').hidden = false;
+    e.target.querySelector('input').select();
+  }
 });
 
 $('logout').addEventListener('click', () => db.auth.signOut());
@@ -50,7 +42,7 @@ db.auth.onAuthStateChange((_e, session) => {
   $('login').hidden = inside;
   $('dash').hidden = !inside;
   if (inside) {
-    $('who').textContent = session.user.email;
+    $('who').textContent = 'מחוברים';
     guard();
   }
 });
@@ -86,6 +78,14 @@ async function setStatus(id, status) {
   if (error) { alert('לא הצלחנו לעדכן: ' + error.message); return; }
   const row = rows.find(r => r.id === id);
   if (row) row.status = status;
+  render();
+}
+
+async function removeRow(id, name) {
+  if (!confirm(`למחוק את ההרשמה של ${name}? אי אפשר לשחזר.`)) return;
+  const { error } = await db.from('registrations').delete().eq('id', id);
+  if (error) { alert('לא הצלחנו למחוק: ' + error.message); return; }
+  rows = rows.filter(r => r.id !== id);
   render();
 }
 
@@ -134,11 +134,15 @@ function render() {
         ${STATUSES.map(s => `
           <button class="chip ${(r.status || 'חדש') === s ? 'is-on' : ''}"
                   data-id="${r.id}" data-status="${s}">${s}</button>`).join('')}
+        <button class="chip chip--del" data-del="${r.id}"
+                data-name="${esc(r.name)}" title="מחיקת ההרשמה">מחיקה</button>
       </div>
     </article>`).join('');
 }
 
 $('list').addEventListener('click', (e) => {
+  const del = e.target.closest('.chip--del');
+  if (del) { removeRow(Number(del.dataset.del), del.dataset.name); return; }
   const b = e.target.closest('.reg__status .chip');
   if (b) setStatus(Number(b.dataset.id), b.dataset.status);
 });

@@ -15,12 +15,8 @@ window.ESTERIKA_CONFIG = {
     '0ddb6462-a74b-4e34-9110-30ba70dc7367'
   ],
 
-  // המיילים שמורשים להיכנס לעמוד הנרשמים (admin.html).
-  // חשוב: אותם מיילים בדיוק צריכים להופיע גם בטבלת staff ב-Supabase.
-  MANAGER_EMAILS: [
-    'gmrozental@gmail.com',
-    'hilirozental@gmail.com',
-    'esterikatruck@gmail.com',
-    'guyguroz@gmail.com'
-  ]
+  // חשבון הניהול המשותף. הכניסה לעמוד הנרשמים היא עם קוד בלבד —
+  // הקוד הוא הסיסמה של החשבון הזה ב-Supabase (Authentication → Users).
+  // המייל כאן הוא רק מזהה; הסוד היחיד הוא הקוד, והוא לא נשמר בקוד המקור.
+  ADMIN_EMAIL: 'esterikatruck@gmail.com' 
 };
