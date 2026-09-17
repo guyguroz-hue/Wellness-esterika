@@ -23,3 +23,23 @@ create policy "public can insert registrations"
 
 create index if not exists registrations_created_at_idx
   on public.registrations (created_at desc);
+
+-- ===== גישה לעמוד הניהול (admin.html) =====
+-- משתמשים מחוברים (ההורים) רשאים לראות ולעדכן את הנרשמים.
+drop policy if exists "staff can read registrations" on public.registrations;
+create policy "staff can read registrations"
+  on public.registrations for select
+  to authenticated
+  using (true);
+
+drop policy if exists "staff can update registrations" on public.registrations;
+create policy "staff can update registrations"
+  on public.registrations for update
+  to authenticated
+  using (true) with check (true);
+
+drop policy if exists "staff can delete registrations" on public.registrations;
+create policy "staff can delete registrations"
+  on public.registrations for delete
+  to authenticated
+  using (true);

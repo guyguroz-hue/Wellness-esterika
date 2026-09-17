@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>הנרשמים · אסתריקה</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#F7F5F0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/admin.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📋</text></svg>">
+</head>
+<body class="admin">
+<main class="page">
+
+  <!-- LOGIN -->
+  <section class="card" id="login">
+    <span class="footer__mark">א</span>
+    <h2 class="center">הנרשמים לבוקר הוולנסי</h2>
+    <p class="muted center">התחברו כדי לראות את רשימת הנרשמים.</p>
+    <form id="loginForm">
+      <label>אימייל
+        <input type="email" name="email" required autocomplete="username" placeholder="your@email.com">
+      </label>
+      <label>סיסמה
+        <input type="password" name="password" required autocomplete="current-password" placeholder="••••••••">
+      </label>
+      <button class="btn btn--primary" type="submit">כניסה</button>
+      <p class="form__msg form__msg--err" id="loginMsg" hidden></p>
+    </form>
+  </section>
+
+  <!-- DASHBOARD -->
+  <div id="dash" hidden>
+
+    <header class="card admin__top">
+      <div>
+        <h2>הנרשמים</h2>
+        <p class="muted" id="who"></p>
+      </div>
+      <button class="link" id="logout">יציאה</button>
+    </header>
+
+    <section class="stats">
+      <div class="stat"><b id="sTotal">0</b><span>סה״כ נרשמים</span></div>
+      <div class="stat"><b id="sPeople">0</b><span>משתתפים משוער</span></div>
+      <div class="stat"><b id="sNew">0</b><span>ממתינים לטיפול</span></div>
+    </section>
+
+    <section class="card admin__tools">
+      <input type="search" id="search" placeholder="חיפוש לפי שם, טלפון או הערה...">
+      <div class="filters" id="filters">
+        <button class="chip is-on" data-f="הכל">הכל</button>
+        <button class="chip" data-f="חדש">חדש</button>
+        <button class="chip" data-f="אושר">אושר</button>
+        <button class="chip" data-f="שילם">שילם</button>
+        <button class="chip" data-f="ביטל">ביטל</button>
+      </div>
+      <div class="admin__actions">
+        <button class="btn btn--soft" id="refresh">רענון</button>
+        <button class="btn btn--soft" id="csv">הורדת קובץ אקסל</button>
+      </div>
+    </section>
+
+    <div id="list"></div>
+    <p class="muted center" id="empty" hidden>עוד אין נרשמים 🌿</p>
+
+  </div>
+</main>
+
+<script src="assets/config.js"></script>
+<script type="module" src="assets/admin.js"></script>
+</body>
+</html>
