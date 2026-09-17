@@ -35,6 +35,25 @@ async function saveToSupabase(row) {
   if (!res.ok) throw new Error(`Supabase ${res.status}: ${await res.text()}`);
 }
 
+// התראה במייל למנהלים על הרשמה חדשה (fire-and-forget)
+function notifyManagers(row) {
+  if (!CFG.NOTIFY_ACCESS_KEY) return;
+  fetch('https://api.web3forms.com/submit', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+    body: JSON.stringify({
+      access_key: CFG.NOTIFY_ACCESS_KEY,
+      subject: `הרשמה חדשה לבוקר הוולנסי — ${row.name}`,
+      from_name: 'אתר אסתריקה',
+      שם: row.name,
+      טלפון: row.phone,
+      אימייל: row.email || '—',
+      מגיעים: row.people,
+      הערות: row.notes || '—'
+    })
+  }).catch(() => {});   // התראה שנכשלה לא מפריעה להרשמה — היא כבר נשמרה
+}
+
 function sendToWhatsapp(row) {
   const lines = [
     'היי אסתריקה! אשמח להירשם לבוקר הוולנסי 🌿',
@@ -74,6 +93,7 @@ form?.addEventListener('submit', async (e) => {
   submitBtn.textContent = 'שולח...';
   try {
     await saveToSupabase(row);
+    notifyManagers(row);
     form.hidden = true;
     setMsg('');
     document.getElementById('done').hidden = false;

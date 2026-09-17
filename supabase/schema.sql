@@ -34,7 +34,8 @@ alter table public.staff enable row level security;   -- אף אחד לא קור
 insert into public.staff (email) values
   ('gmrozental@gmail.com'),
   ('hilirozental@gmail.com'),
-  ('esterikatruck@gmail.com')
+  ('esterikatruck@gmail.com'),
+  ('guyguroz@gmail.com')
 on conflict (email) do nothing;
 
 -- רק מי שנכנס עם מייל שמופיע בטבלת staff יכול לראות ולעדכן נרשמים.
