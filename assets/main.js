@@ -44,7 +44,7 @@ function notifyManagers(row) {
       headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
       body: JSON.stringify({
         access_key: key,
-        subject: `הרשמה חדשה לבוקר הוולנסי — ${row.name}`,
+        subject: `הרשמה חדשה לבוקר wellness — ${row.name}`,
         from_name: 'אתר אסתריקה',
         שם: row.name,
         טלפון: row.phone,
@@ -58,7 +58,7 @@ function notifyManagers(row) {
 
 function sendToWhatsapp(row) {
   const lines = [
-    'היי אסתריקה! אשמח להירשם לבוקר הוולנסי 🌿',
+    'היי אסתריקה! אשמח להירשם לבוקר wellness 🌿',
     `שם: ${row.name}`,
     `טלפון: ${row.phone}`,
     row.email && `אימייל: ${row.email}`,

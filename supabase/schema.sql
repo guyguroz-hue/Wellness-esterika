@@ -7,7 +7,7 @@ create table if not exists public.registrations (
   email       text,
   people      text,
   notes       text,
-  event       text default 'הבוקר הוולנסי',
+  event       text default 'בוקר wellness',
   status      text default 'חדש'   -- חדש / אושר / שילם / ביטל
 );
 
