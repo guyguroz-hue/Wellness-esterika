@@ -395,7 +395,13 @@ button[disabled]{opacity:.5;cursor:progress}
   font-family:var(--display);font-weight:400;line-height:.9;
   font-size:clamp(3.4rem,11vw,5rem);color:var(--clay);
 }
-.hero__date span{font-size:.74rem;letter-spacing:.24em;color:var(--ink-soft)}
+.hero__date span{
+  display:flex;flex-direction:column;gap:.5em;
+  font-size:.86rem;letter-spacing:.2em;font-weight:600;color:var(--clay);
+}
+.hero__date span em{
+  font-style:normal;font-size:.72rem;letter-spacing:.24em;font-weight:400;color:var(--ink-soft);
+}
 .hero__rail{margin-top:1.2rem}
 
 /* ===== Credits inside acts ===== */
