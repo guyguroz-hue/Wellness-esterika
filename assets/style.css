@@ -85,6 +85,7 @@ b,strong{font-weight:700}
   content:"";position:absolute;inset:0;pointer-events:none;
   box-shadow:inset 0 0 0 1px var(--rule);
 }
+.hero .kicker{display:none}
 .hero h1{margin-bottom:.28em;font-size:clamp(3rem,10vw,5.6rem)}
 .hero__lead{font-size:clamp(1rem,2.2vw,1.2rem);max-width:32ch;color:var(--ink-soft);font-weight:300}
 .hero__rail{list-style:none;display:flex;padding:0;margin:2rem 0 0;border-top:1px solid var(--rule)}
@@ -372,13 +373,17 @@ button[disabled]{opacity:.5;cursor:progress}
 .latin{display:inline-block;direction:ltr;letter-spacing:-.02em}
 
 /* ===== Collab lockup ===== */
-.mast__brand .lockup{
-  font-family:var(--display);font-size:1.15rem;display:flex;align-items:center;gap:.5em;
+.mast__brand{text-decoration:none;color:inherit}
+.mast__brand .lockup{display:flex;align-items:flex-end;gap:.75em}
+.lockup__unit{display:flex;flex-direction:column;align-items:center;line-height:1}
+.lockup__unit small{
+  font-family:var(--sans);font-weight:600;font-size:.56rem;letter-spacing:.2em;
+  color:var(--ink-soft);margin-bottom:.7em;white-space:nowrap;
 }
-.mast__brand .lockup em{font-style:normal;color:var(--clay);font-size:.9em}
-.mast__brand small{
-  display:block;font-family:var(--sans);font-weight:300;font-size:.6rem;
-  letter-spacing:.22em;color:var(--ink-soft);margin-top:.5em;
+.lockup__unit b{font-family:var(--display);font-weight:400;font-size:1.2rem;line-height:1}
+.mast__brand .lockup em{
+  font-style:normal;font-family:var(--display);color:var(--clay);
+  font-size:1.05rem;line-height:1;padding-bottom:.05em;
 }
 
 /* ===== Hero date ===== */
