@@ -56,6 +56,21 @@ function notifyManagers(row) {
   });
 }
 
+// התראת פוש לטלפון של המנהלים (ntfy). בלי פרטים אישיים — רק קריאה להיכנס.
+function pushToPhones() {
+  if (!CFG.NTFY_TOPIC) return;
+  fetch(`https://ntfy.sh/${CFG.NTFY_TOPIC}`, {
+    method: 'POST',
+    headers: {
+      Title: 'הרשמה חדשה לבוקר wellness',
+      Tags: 'seedling',
+      Priority: 'high',
+      Click: CFG.ADMIN_URL || ''
+    },
+    body: 'נרשם/ת חדש/ה. היכנסו לעמוד הנרשמים לפרטים.'
+  }).catch(() => {});
+}
+
 function sendToWhatsapp(row) {
   const lines = [
     'היי אסתריקה! אשמח להירשם לבוקר wellness 🌿',
@@ -96,6 +111,7 @@ form?.addEventListener('submit', async (e) => {
   try {
     await saveToSupabase(row);
     notifyManagers(row);
+    pushToPhones();
     form.hidden = true;
     setMsg('');
     document.getElementById('done').hidden = false;

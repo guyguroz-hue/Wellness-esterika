@@ -18,5 +18,12 @@ window.ESTERIKA_CONFIG = {
   // חשבון הניהול המשותף. הכניסה לעמוד הנרשמים היא עם קוד בלבד —
   // הקוד הוא הסיסמה של החשבון הזה ב-Supabase (Authentication → Users).
   // המייל כאן הוא רק מזהה; הסוד היחיד הוא הקוד, והוא לא נשמר בקוד המקור.
-  ADMIN_EMAIL: 'esterikatruck@gmail.com' 
+  ADMIN_EMAIL: 'esterikatruck@gmail.com',
+
+  // התראת פוש לטלפון על כל הרשמה (דרך ntfy.sh — בלי מייל ובלי וואטסאפ).
+  // המנהלים מתקינים את אפליקציית ntfy ונרשמים לנושא הזה. ההודעה מכוונת
+  // לעמוד הנרשמים ואינה מכילה פרטים אישיים, כי מי שיודע את שם הנושא
+  // יכול להירשם אליו. ריק = בלי פוש.
+  NTFY_TOPIC: 'esterika-ed0ee3954c25',
+  ADMIN_URL: 'https://wellness-esterika.vercel.app/admin' 
 };
