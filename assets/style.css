@@ -466,3 +466,11 @@ button[disabled]{opacity:.5;cursor:progress}
 @media (max-width:720px){
   .foot__cols{grid-template-columns:1fr;gap:1.9rem}
 }
+
+/* Links inside a spec row */
+.dd__links{display:flex;gap:1.4rem;flex-wrap:wrap;margin-top:.9em}
+.dd__links a{
+  font-size:.92rem;font-weight:600;color:var(--clay);text-decoration:none;
+  border-bottom:1px solid var(--rule);padding-bottom:.3em;transition:border-color .3s;
+}
+.dd__links a:hover{border-color:var(--clay)}
