@@ -87,7 +87,7 @@ b,strong{font-weight:700}
 }
 .hero .kicker{display:none}
 .hero h1{margin-bottom:.28em;font-size:clamp(3rem,10vw,5.6rem)}
-.hero__lead{font-size:clamp(1rem,2.2vw,1.2rem);max-width:32ch;color:var(--ink-soft);font-weight:300}
+.hero__lead{font-size:clamp(1rem,2.2vw,1.2rem);max-width:36ch;color:var(--ink-soft);font-weight:300}
 .hero__rail{list-style:none;display:flex;padding:0;margin:2rem 0 0;border-top:1px solid var(--rule)}
 .hero__rail li{padding:1rem 1.5rem 0 0;flex:0 0 auto;min-width:118px}
 .hero__rail li + li{border-inline-start:1px solid var(--rule);padding-inline-start:1.5rem}
