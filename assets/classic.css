@@ -338,6 +338,7 @@ button[disabled]{opacity:.5;cursor:progress}
   padding:.18em .6em;line-height:1.35;white-space:nowrap;
 }
 .dock__cta .cur{font-size:.88em}
+.dock__cta em s{opacity:.55;font-weight:400;font-size:.85em;margin-inline-end:.35em}
 .dock__cta:hover{background:#8E3D22}
 .dock__ico{
   width:62px;display:grid;place-items:center;background:var(--sand-2);color:var(--ink);

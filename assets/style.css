@@ -314,7 +314,10 @@ button[disabled]{opacity:.55;cursor:progress}
 .tabbar__cta em{
   font-style:normal;background:rgba(255,255,255,.22);border-radius:999px;
   padding:.15em .7em;font-size:.88rem;white-space:nowrap;
+  display:inline-flex;align-items:baseline;gap:.38em;font-weight:700;
 }
+.tabbar__cta em s{opacity:.62;font-weight:400;font-size:.86em}
+.tabbar__cta .cur{font-size:.88em}
 .tabbar__ico{
   width:48px;height:48px;flex:none;border-radius:50%;background:var(--card);
   display:grid;place-items:center;color:var(--ink);box-shadow:var(--sh-1);transition:.2s;
