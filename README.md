@@ -6,6 +6,7 @@
 ## מבנה
 - `index.html` — הדף (עברית, RTL)
 - `assets/style.css` — עיצוב
+- `classic.html` + `assets/classic.css` — העיצוב הקודם, נשמר לגיבוי (לא מקושר, `noindex`)
 - `assets/config.js` — **כאן מזינים את מפתחות Supabase ומספר הוואטסאפ**
 - `assets/main.js` — אנימציות גלילה ושליחת טופס ההרשמה
 - `admin.html` — **עמוד הנרשמים** (פרטי, עם התחברות)
