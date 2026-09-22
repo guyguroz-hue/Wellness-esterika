@@ -88,11 +88,16 @@ b,strong{font-weight:700}
 .hero .kicker{display:none}
 .hero h1{margin-bottom:.28em;font-size:clamp(3rem,10vw,5.6rem)}
 .hero__lead{font-size:clamp(1rem,2.2vw,1.2rem);max-width:36ch;color:var(--ink-soft);font-weight:300}
-.hero__rail{list-style:none;display:flex;padding:0;margin:2rem 0 0;border-top:1px solid var(--rule)}
-.hero__rail li{padding:1rem 1.5rem 0 0;flex:0 0 auto;min-width:118px}
-.hero__rail li + li{border-inline-start:1px solid var(--rule);padding-inline-start:1.5rem}
+.hero__rail{
+  list-style:none;display:grid;grid-template-columns:repeat(4,auto);
+  justify-content:start;padding:0;margin:2rem 0 0;border-top:1px solid var(--rule);
+}
+.hero__rail li{padding:1rem 1.3rem 0 0;min-width:112px}
+.hero__rail li + li{border-inline-start:1px solid var(--rule);padding-inline-start:1.3rem}
 .hero__rail b{display:block;font-family:var(--display);font-size:1.7rem;font-weight:400;line-height:1}
-.hero__rail span{font-size:.72rem;letter-spacing:.16em;color:var(--ink-soft)}
+.hero__rail span{
+  display:block;font-size:.7rem;letter-spacing:.12em;color:var(--ink-soft);margin-top:.5em;
+}
 
 /* price flag in the hero */
 .hero__price{
@@ -354,6 +359,10 @@ button[disabled]{opacity:.5;cursor:progress}
   .hero__grid{grid-template-columns:1fr;padding-block:0 60px}
   .hero__media{margin-inline:calc(50% - 50vw);width:100vw}
   .hero__inner{width:min(1180px,88vw);margin-inline:auto;padding-top:2.2rem}
+  .hero__rail{grid-template-columns:1fr 1fr;justify-content:stretch}
+  .hero__rail li{padding-inline:0 1rem;min-width:0}
+  .hero__rail li:nth-child(odd){border-inline-start:none;padding-inline-start:0}
+  .hero__rail li:nth-child(n+3){border-top:1px solid var(--rule);margin-top:.9rem;padding-top:.9rem}
   .act,.act--flip .act__media{grid-template-columns:1fr;order:0}
   .act__text{margin-top:-.6rem}
   .spec{grid-template-columns:1fr;gap:.35rem}
